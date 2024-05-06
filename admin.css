@@ -1,0 +1,44 @@
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для шапки с боку */
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px; /* Ширина боковой панели */
+    height: 100%;
+    background-color: #333; /* Темный цвет фона */
+    color: #fff; /* Цвет текста */
+    padding-top: 20px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+#sidebar ul li a:hover {
+    background-color: #555; /* Цвет при наведении */
+}
+
+/* Стили для основного контента */
+#main-content {
+    margin-left: 200px; /* Учитываем ширину боковой панели */
+    padding: 20px;
+}
