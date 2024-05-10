@@ -1,0 +1,194 @@
+.notification-area {
+  display: none;
+  background-color: #01489d;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+#orderLink {
+  display: none;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+#orderLink:hover {
+  background-color: #0056b3;
+}
+
+/* Файл: css/style.css */
+
+.notification-area {
+  color: #ff9800;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+
+.seat.reserved {
+  background-color: red;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+body {
+  background: #1d1f20; /* Основной фон страницы */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+.reservation-area {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding: 40px;
+  background: rgba(36, 37, 38, 0.9); /* Полупрозрачный черный фон под местами */
+  border-radius: 20px; /* Скругленные углы у области бронирования */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Тень для объема */
+}
+.alarm-icon {
+  display: block;
+  margin: 30px auto; /* Центрируем иконку над сеткой */
+  font-size: 3rem;
+  color: #9b59b6;
+}
+.seat {
+  position: relative;
+  background: #4e3a4c; /* Темно-фиолетовый цвет для мест */
+  color: white;
+  border: 2px solid #5d536b; /* Граница для определения мест */
+  border-radius: 10px; /* Скругленные углы для мест */
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.seat {
+  position: relative;
+  background: #3498db; /* Цвет игрового стула */
+  color: #fff; /* Цвет текста */
+  border-radius: 8px; /* Скругление углов */
+  padding: 10px 15px; /* Поля внутри стула */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+}
+
+.seat:not(.reserved):hover {
+  background: #2980b9; /* Изменение цвета при наведении */
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #2c3e50; /* Фон модального контента */
+  width: 300px; /* Фиксированная ширина модального окна */
+  margin: auto; /* Центрирование модального окна */
+  padding: 20px;
+  border-radius: 10px; /* Скругленные углы */
+}
+.close-btn {
+  color: #ccc; /* Светло-серый цвет для иконки закрытия */
+  float: right; /* Кнопка закрытия справа от контента */
+  font-size: 28px; /* Увеличиваем размер для легкости клика */
+  cursor: pointer;
+}
+.modal-header {
+  margin-bottom: 20px;
+}
+.modal-content input,
+.modal-content select,
+.modal-content button {
+  width: 100%; /* Ширина элементов формы под ширину модального окна */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Чтобы padding не увеличивал размеры элементов */
+}
+.modal-content button {
+  background-color: #8e44ad; /* Фиолетовый цвет кнопки */
+  color: white;
+  border: none;
+}
+.modal-content button:hover {
+  background-color: #9b59b6; /* Светлее фиолетовый при наведении */
+}
+.modal.show {
+  display: flex; /* Используем flex для показа модального окна */
+  animation: fadeIn 0.5s; /* Анимация плавного появления */
+}
+/* Анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.modal-content {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-out;
+}
+.modal.show .modal-content {
+  transform: scale(1); /* Анимация увеличения модального окна */
+}
+.modal-content input:focus,
+.modal-content select:focus {
+  outline: none;
+  border-color: #9b59b6; /* Фиолетовая обводка при фокусе */
+  box-shadow: 0 0 8px #9b59b6; /* Тень вокруг активного элемента */
+}
+/* Стиль для отображения кнопки как заблокированной */
+.modal-content button[disabled] {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+/* Скрытие модального окна */
+.modal.hide {
+  display: none;
+}
